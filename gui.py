@@ -70,16 +70,6 @@ class MyApp(QWidget):
                         "tex": self.texNameLe_9,
                         "rmv": self.removeBtn_9,
                         },
-                        {
-                        "var": self.varNameLe_10,
-                        "tex": self.texNameLe_10,
-                        "rmv": self.removeBtn_10,
-                        },
-                        {
-                        "var": self.varNameLe_11,
-                        "tex": self.texNameLe_11,
-                        "rmv": self.removeBtn_11,
-                        },
                     ]
 
         with open("cssfiles/removestyle.css", "r") as f:
