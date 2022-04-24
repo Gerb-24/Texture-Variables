@@ -25,51 +25,113 @@ class MyApp(QWidget):
                 self.textureVariables = json.loads(f.read())
 
         self.data = [
-                        {
-                        "var": self.varNameLe_1,
-                        "tex": self.texNameLe_1,
-                        "rmv": self.removeBtn_1,
-                        },
-                        {
-                        "var": self.varNameLe_2,
-                        "tex": self.texNameLe_2,
-                        "rmv": self.removeBtn_2,
-                        },
-                        {
-                        "var": self.varNameLe_3,
-                        "tex": self.texNameLe_3,
-                        "rmv": self.removeBtn_3,
-                        },
-                        {
-                        "var": self.varNameLe_4,
-                        "tex": self.texNameLe_4,
-                        "rmv": self.removeBtn_4,
-                        },
-                        {
-                        "var": self.varNameLe_5,
-                        "tex": self.texNameLe_5,
-                        "rmv": self.removeBtn_5,
-                        },
-                        {
-                        "var": self.varNameLe_6,
-                        "tex": self.texNameLe_6,
-                        "rmv": self.removeBtn_6,
-                        },
-                        {
-                        "var": self.varNameLe_7,
-                        "tex": self.texNameLe_7,
-                        "rmv": self.removeBtn_7,
-                        },
-                        {
-                        "var": self.varNameLe_8,
-                        "tex": self.texNameLe_8,
-                        "rmv": self.removeBtn_8,
-                        },
-                        {
-                        "var": self.varNameLe_9,
-                        "tex": self.texNameLe_9,
-                        "rmv": self.removeBtn_9,
-                        },
+                            {
+                            "var": self.varNameLe_1,
+                            "tex": self.texNameLe_1,
+                            "rmv": self.removeBtn_1,
+                            },
+
+                            {
+                            "var": self.varNameLe_2,
+                            "tex": self.texNameLe_2,
+                            "rmv": self.removeBtn_2,
+                            },
+
+                            {
+                            "var": self.varNameLe_3,
+                            "tex": self.texNameLe_3,
+                            "rmv": self.removeBtn_3,
+                            },
+
+                            {
+                            "var": self.varNameLe_4,
+                            "tex": self.texNameLe_4,
+                            "rmv": self.removeBtn_4,
+                            },
+
+                            {
+                            "var": self.varNameLe_5,
+                            "tex": self.texNameLe_5,
+                            "rmv": self.removeBtn_5,
+                            },
+
+                            {
+                            "var": self.varNameLe_6,
+                            "tex": self.texNameLe_6,
+                            "rmv": self.removeBtn_6,
+                            },
+
+                            {
+                            "var": self.varNameLe_7,
+                            "tex": self.texNameLe_7,
+                            "rmv": self.removeBtn_7,
+                            },
+
+                            {
+                            "var": self.varNameLe_8,
+                            "tex": self.texNameLe_8,
+                            "rmv": self.removeBtn_8,
+                            },
+
+                            {
+                            "var": self.varNameLe_9,
+                            "tex": self.texNameLe_9,
+                            "rmv": self.removeBtn_9,
+                            },
+
+                            {
+                            "var": self.varNameLe_10,
+                            "tex": self.texNameLe_10,
+                            "rmv": self.removeBtn_10,
+                            },
+
+                            {
+                            "var": self.varNameLe_11,
+                            "tex": self.texNameLe_11,
+                            "rmv": self.removeBtn_11,
+                            },
+
+                            {
+                            "var": self.varNameLe_12,
+                            "tex": self.texNameLe_12,
+                            "rmv": self.removeBtn_12,
+                            },
+
+                            {
+                            "var": self.varNameLe_13,
+                            "tex": self.texNameLe_13,
+                            "rmv": self.removeBtn_13,
+                            },
+
+                            {
+                            "var": self.varNameLe_14,
+                            "tex": self.texNameLe_14,
+                            "rmv": self.removeBtn_14,
+                            },
+
+                            {
+                            "var": self.varNameLe_15,
+                            "tex": self.texNameLe_15,
+                            "rmv": self.removeBtn_15,
+                            },
+
+                            {
+                            "var": self.varNameLe_16,
+                            "tex": self.texNameLe_16,
+                            "rmv": self.removeBtn_16,
+                            },
+
+                            {
+                            "var": self.varNameLe_17,
+                            "tex": self.texNameLe_17,
+                            "rmv": self.removeBtn_17,
+                            },
+
+                            {
+                            "var": self.varNameLe_18,
+                            "tex": self.texNameLe_18,
+                            "rmv": self.removeBtn_18,
+                            },
                     ]
 
         with open("cssfiles/removestyle.css", "r") as f:
@@ -125,6 +187,11 @@ class MyApp(QWidget):
         for index, texture_variable in enumerate(self.textureVariables):
             self.createItem( index, texture_variable )
 
+        if len(self.data) == len(self.textureVariables):
+            self.addBtn.setEnabled(False)
+        else:
+            self.addBtn.setEnabled(True)
+
     def addNewItem( self, var, tex ):
         try:
             elem = { "var": var, "tex": tex }
@@ -132,8 +199,8 @@ class MyApp(QWidget):
             self.rerenderList()
             self.varName = ""
             self.texName = ""
-            self.varNameLe.setText = ""
-            self.texNameLe.setText = ""
+            self.varNameLe.setText("")
+            self.texNameLe.setText("")
         except Exception:
             print(traceback.format_exc())
 
